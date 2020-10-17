@@ -14,14 +14,14 @@
 <p>Código de Identificação da Eleição: {{election_hash}}</p>
 <br>
 
-{% ifequal voter.voter_type "password" %}
+{% if (election_openreg == "False") and (voter.voter_type == "password") %}
 <p>
     <strong>Seu ID de eleitor</strong>: {{voter.voter_login_id}}<br>
     <strong>Sua senha para essa eleição</strong>: {{voter.voter_password}}<br>
 </p>
 {% else %}
-<p>Conecte-se com seu usuário e senha dos sistemas do IFSC.</p>
-{% endifequal %}
+<p>Conecte-se com seu meio de autenticação para esta eleição.</p>
+{% endifl %}
 
 {% if voter.vote_hash %}
 <p>
@@ -42,14 +42,7 @@ IMPORTANTE: quando você for solicitado a informar seu login para votar, informe
 {% endif %}
 <br>
 <p>Você pode depositar quantos votos quiser, apenas o último voto será contabilizado.</p>
---
-<br>
-<font style="" size="1" face="verdana, sans-serif"><b style="">Instituto Federal de Santa Catarina - Reitoria</b>
-</font>
-<br>
-<font style="" size="1" face="verdana, sans-serif">Rua 14 de Julho, 150, Coqueiros, Florianópolis / SC - CEP: 88075-010</font>
-<br>
-<u><a href="http://www.ifsc.edu.br" target="_blank" style=""><font style="" face="verdana, sans-serif">www.ifsc.edu.br</font></a></u>
-
+--<br>
+Sistema de Votação Eletrônica
 </body>
 </html>

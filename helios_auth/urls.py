@@ -40,3 +40,9 @@ if 'ldap' in AUTH_ENABLED_AUTH_SYSTEMS:
 if 'shibboleth' in AUTH_ENABLED_AUTH_SYSTEMS:
     from auth_systems.shibboleth import urlpatterns as shibboleth_patterns
     urlpatterns.extend(shibboleth_patterns)
+
+# cert 
+if 'cert' in AUTH_ENABLED_AUTH_SYSTEMS:
+    from auth_systems.certauth import urlpatterns as cert_patterns
+    urlpatterns.extend(cert_patterns)
+

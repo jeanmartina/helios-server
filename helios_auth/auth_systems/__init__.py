@@ -46,6 +46,10 @@ if _is_enabled('shibboleth'):
     import shibboleth
     AUTH_SYSTEMS['shibboleth'] = shibboleth
 
+if _is_enabled('cert'):
+    import certauth
+    AUTH_SYSTEMS['cert'] = certauth
+
 # not ready
 #import live
 #AUTH_SYSTEMS['live'] = live
